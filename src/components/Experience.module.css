@@ -1,0 +1,145 @@
+.section {
+  background: var(--light);
+  padding: 88px 0;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--mid);
+  border-radius: 2px;
+}
+
+.item {
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 36px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.dot {
+  position: absolute;
+  left: 1px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--light);
+  box-shadow: 0 0 0 3px var(--accent);
+  transition: transform 0.2s;
+  z-index: 1;
+}
+
+.item:hover .dot {
+  transform: scale(1.2);
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border: 1px solid var(--mid);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(46, 125, 224, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.role {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.period {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.type {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.companyBadge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(46, 125, 224, 0.1);
+  border: 1px solid rgba(46, 125, 224, 0.2);
+  color: var(--accent);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  flex-shrink: 0;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.highlights li {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 16px;
+  position: relative;
+}
+
+.highlights li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.highlightTitle {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.highlightDesc {
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .cardHeader {
+    flex-direction: column;
+  }
+  .card {
+    padding: 18px;
+  }
+}
